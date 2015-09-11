@@ -70,6 +70,7 @@
 
             <!--TODO: We assume this is visible to the public/order requestor - Please confirm -->
             <!-- Kuldar: Seems so, for internal notes we have InternalNote -->
+            <!-- Alex: Yes -->
             <xs:element name="ArchivistOrderNotes" type="xs:string" minOccurs="0" maxOccurs="1" />
 
             <xs:element name="OrderDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
@@ -86,6 +87,7 @@
 
             <!--TODO: Must be optional because it will be null when the order has been issued but not seen by an archivist-->
             <!-- Kuldar: probably not understood correctly - I think it's the due date when the Order has to be delivered to the user? -->
+            <!-- Alex: It is the date on which the archivist expects that the DIP will be accessible by the end-user -->
             <xs:element name="OrderAccessDate" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
 
             <xs:element name="EndUserReference" type="UserReferenceType" minOccurs="0" maxOccurs="1" />
@@ -102,8 +104,10 @@
             <!-- Kuldar: There might be multiple restrictions on an item (example: Personal Data + Business Sensitivity) -->
             <xs:element name="AccessRestriction" type="AccessRestrictionType" minOccurs="1" maxOccurs="unbounded"/>
 
-            <!--TODO: We assume this is only for archivists. Please confirm. Kuldar: Yes -->
-            <!--TODO: We suggest that this get replaced with a list, with each element containing text, timestamp and reference to archivist who wrote i. Kuldar: agree-->
+            <!--TODO: We assume this is only for archivists. Please confirm.-->
+            <!-- Kuldar: yes -->
+            <!--TODO: We suggest that this get replaced with a list, with each element containing text, timestamp and reference to archivist who wrote i.-->
+            <!-- Kuldar: yes -->
             <!--TODO: Is this supposed to be here, or in the order management system itself? Kuldar: up to you.. In future might be useful to have it here if let's say Estonian and Danish National Archives have a common high level ordering portal and the Order needs to be sent between institutional systems. So, let's keep it in as optional -->
             <xs:element name="InternalNote" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 
